@@ -31,7 +31,7 @@ const project: Project[] = [
     {
         image: '/zangi-app.jpg',
         title: "Zangi",
-        description: "A Mobile App and Web App texting platform that runs on all devices, assist in writing server function with JavaScript and update their Authetication function JWT",
+        description: "A Landing web Development for a Mobile Development Platform Zangi for easy acces to user to report and to get information about the app, a User Friendly landing page website",
         liveUrl: 'https://zangi.com',
     },
 ];
