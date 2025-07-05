@@ -14,25 +14,25 @@ const project: Project[] = [
         image: '/zylus-web.jpg',
         title: "Zylus Website",
         description: "Website develop to help the enterprise to run their day to day activities and to ehnance throught the internet, Tech stack: NextJS, TypeScript, Tailwindcss for UI development and Vercel for hosting.",
-        liveUrl: 'zylusgroup.com',
+        liveUrl: 'https://zylusgroup.com',
     },
     {
         image: '/lighten-web.jpg',
         title: "Sydney Wedding Photographer",
         description: "A gallery shoting website base in Austrailia, assit in optimizing the website and testing the TypeScrit to ensure smooth running and and fast loading, Tech stack: NextJS, TypeScript, Framer motion.",
-        liveUrl: 'inlighten.com.au',
+        liveUrl: 'https://inlighten.com.au',
     },
     {
         image: '/tricia-web.jpg',
         title: "Tricia Portofolio Web",
         description: "Portofolio Website for a writer and a book publisher, to document all their blog and project as well to optimize its runnin, Tech stack: HTML5, CSS3, JavaScript, API interagation.",
-        liveUrl: 'triciaklapheke.com',
+        liveUrl: 'https://triciaklapheke.com',
     },
     {
         image: '/zangi-app.jpg',
         title: "Zangi",
         description: "A Mobile App and Web App texting platform that runs on all devices, assist in writing server function with JavaScript and update their Authetication function JWT",
-        liveUrl: 'zangi.com',
+        liveUrl: 'https://zangi.com',
     },
 ];
 
@@ -65,7 +65,7 @@ const MyProject = () => {
                                 <p className="text-sm text-gray-600 mt-1 font-semibold">
                                     {project.description}
                                 </p>
-                               <a href={project.liveUrl}
+                               <a href={project.liveUrl.startsWith('http') ? project .liveUrl : `https://${project.liveUrl}`}
                                  target="_blank"
                                  rel="noopener noreferre"
                                  className="inline-block mt-4 px-4 py-2 bg-gray-900 text-white text-xs font-medium rounded hover:bg-gray-700">

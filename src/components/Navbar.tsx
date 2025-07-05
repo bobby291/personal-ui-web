@@ -21,7 +21,7 @@ const Navbar = () => {
        {/* <li><Link href="/work" className="hover:text-gray-500/80 transition">Services</Link></li> */} 
        <li><Link href="/contact" className="hover:text-gray-500/80 transition">Contact</Link></li>
         <li><a href="/My Resume.pdf" className="hover:text-gray-500/80 transition">Resume</a></li>
-        {/* <li><Link href="/about" className="hover:text-gray-500/80 transition">About Me</Link></li> */}
+        <li><Link href="/about" className="hover:text-gray-500/80 transition">About Me</Link></li>
       </ul>
 
       {/* Desktop Button */}
@@ -57,7 +57,7 @@ const Navbar = () => {
             {/* <li><Link href="/work" className="hover:text-gray-500/80 transition">Services</Link></li> */}             
             <li><a href="/My Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm">Resume</a></li>
             <li><Link href="/contact" className="text-sm">Contact</Link></li>
-            {/* <li><Link href="/about" className="text-sm">About Me</Link></li> */}
+            <li><Link href="/about" className="text-sm">About Me</Link></li>
           </ul>
 
           <button type="button" className="bg-amber-500 text-white border border-none mt-6 text-sm hover:bg-yellow-600 hover:text-white active:scale-95 transition-all w-40 h-11 rounded-full">
