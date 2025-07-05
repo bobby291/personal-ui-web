@@ -14,13 +14,13 @@ const skills: Skill[] = [
 
     {
         icon: <Monitor className="w-8 h-8 text-green-600" />,
-        title: "FrontEnd Web Development",
-        description: 'Creating beautiful and functional web experiences is my forte. Using the latest technologies and best practices, I design and build websites that captivate and engage users.',
+        title: "SoftWare Development",
+        description: 'Creating beautiful and functional web experiences is my forte. Using the latest technologies and best practices, I design and build websites that captivate and engage users using my FrontEnd skills and Little bit of Backend with NodeJS(optional).',
     },
     {
         icon: <Smartphone className="w-8 h-8 text-green-600" />,
         title: "Mobile App Development",
-        description: 'I specialize in creating responsive and intuitive mobile apps that work seamlessly across iOS & Android devices. From concept to deployment, I handle every stage of the development process.',
+        description: 'I specialize in creating responsive and intuitive mobile apps that work seamlessly across iOS & Android devices. From concept to deployment, I handle few stage of the development process(still growing).',
     },
     {
         icon: <Server className="w-8 h-8 text-green-600" />,
