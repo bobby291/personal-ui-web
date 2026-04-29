@@ -1,9 +1,10 @@
 "use client"
 
-import React from "react";
+import React  from "react";
+import { useState } from "react";
 
 const FAQuestion = () => {
-    const [openIndex, setOpenIndex] = React.useState(null);
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const faqs = [
         {
