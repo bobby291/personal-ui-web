@@ -1,78 +1,136 @@
 'use client'
-import { FC } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 interface Project {
     image: string;
     title: string;
     description: string;
     liveUrl: string;
+    githubUrl?: string;
 }
 
-const project: Project[] = [
+const projects: Project[] = [
     {
         image: '/zylus-web.jpg',
         title: "Zylus Website",
-        description: "Website develop to help the enterprise to run their day to day activities and to ehnance throught the internet, Tech stack: NextJS, TypeScript, Tailwindcss for UI development and Vercel for hosting.",
+        description: "Enterprise platform built with Next.js, TypeScript & Tailwind. Optimized for performance and scalability.",
         liveUrl: 'https://zylusgroup.com',
+        githubUrl: '#'
     },
     {
         image: '/lighten-web.jpg',
         title: "Sydney Wedding Photographer",
-        description: "A gallery shoting website base in Austrailia, assit in optimizing the website and testing the TypeScrit to ensure smooth running and and fast loading, Tech stack: NextJS, TypeScript, Framer motion.",
+        description: "High-performance gallery website with smooth animations and optimized loading experience.",
         liveUrl: 'https://inlighten.com.au',
+        githubUrl: '#'
     },
     {
         image: '/tricia-web.jpg',
-        title: "Tricia Portofolio Web",
-        description: "Portofolio Website for a writer and a book publisher, to document all their blog and project as well to optimize its runnin, Tech stack: HTML5, CSS3, JavaScript, API interagation.",
+        title: "Tricia Portfolio",
+        description: "Content-driven portfolio for a writer with blog integration and performance optimization.",
         liveUrl: 'https://triciaklapheke.com',
+        githubUrl: '#'
     },
     {
         image: '/zangi-app.jpg',
-        title: "Zangi",
-        description: "A Landing web Development for a Mobile Development Platform Zangi for easy acces to user to report and to get information about the app, a User Friendly landing page website",
+        title: "Zangi Landing Page",
+        description: "User-friendly landing page for a mobile communication platform.",
         liveUrl: 'https://zangi.com',
+        githubUrl: '#'
+    },
+    {
+        image: '/swift.png',
+        title: "Swift-Via Logistics Website",
+        description: "Fullstack logistics platform built to solve delivery problems in Africa.",
+        liveUrl: 'https://zangi.com',
+        githubUrl: '#'
+    },
+    {
+        image: '/eco-ai.png',
+        title: "Echo AI Chat System",
+        description: "AI chatbot build with clean UI and API key to automate and to assist in delievry work for VA.",
+        liveUrl: 'https://echo-ai-companion-bice.vercel.app/',
+        githubUrl: '#'
     },
 ];
 
 const MyProject = () => {
     return ( 
-        <section className="bg-gray-50 py-16 px-4 md:px-12">
+        <section className="bg-gray-50 py-20 px-6 md:px-12" id="projects">
             <div className="max-w-7xl mx-auto text-center">
-                <h2 className="text-3xl font-bold text-gray-800">
+                
+                <motion.h2 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-4xl font-bold text-gray-900"
+                >
                     My Projects
-                </h2>
-                <p className="mt-4 text-gray-600 font-semibold max-w-2xl mx-auto">
-                    Wether you have a mobile app idea or website that needs a facelift, I am here to turn your digitao dreams into reality.
+                </motion.h2>
+
+                <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    I build scalable, high-performance products that solve real-world problems.
                 </p>
 
-                <div className="mt-12 grid gap-8 sm:grid-cols-2 lg-grid-cols-4">
-                    {project.map((project, index) => (
-                        <div key={index} className="bg-white rounded-lg shadow hover:shadow-lg transition duration-300">
-                            <div className="relative w-full h-48">
+                {/* GRID */}
+                <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                    {projects.map((project, index) => (
+                        
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.15, duration: 0.5 }}
+                            whileHover={{ y: -10 }}
+                            className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300"
+                        >
+
+                            {/* IMAGE */}
+                            <div className="relative w-full h-56 overflow-hidden">
                                 <Image
-                                 src={project.image}
-                                 alt={project.title}
-                                 fill
-                                 className="object-cover rounded-lg"
+                                    src={project.image}
+                                    alt={project.title}
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition duration-500"
                                 />
+
+                                {/* Overlay */}
+                                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-6">
+                                    
+                                    {/* Live */}
+                                    <a 
+                                        href={project.liveUrl}
+                                        target="_blank"
+                                        className="text-white text-2xl hover:scale-110 transition"
+                                    >
+                                        <FiExternalLink />
+                                    </a>
+
+                                    {/* GitHub */}
+                                    <a 
+                                        href={project.githubUrl}
+                                        target="_blank"
+                                        className="text-white text-2xl hover:scale-110 transition"
+                                    >
+                                        <FiGithub />
+                                    </a>
+                                </div>
                             </div>
-                            <div className="p-4 text-left">
-                                <h3 className="text-lg font-semibold text-gray-800"> 
+
+                            {/* CONTENT */}
+                            <div className="p-5 text-left">
+                                <h3 className="text-lg font-semibold text-gray-900">
                                     {project.title}
                                 </h3>
-                                <p className="text-sm text-gray-600 mt-1 font-semibold">
+
+                                <p className="text-sm text-gray-600 mt-2">
                                     {project.description}
                                 </p>
-                               <a href={project.liveUrl.startsWith('http') ? project .liveUrl : `https://${project.liveUrl}`}
-                                 target="_blank"
-                                 rel="noopener noreferre"
-                                 className="inline-block mt-4 px-4 py-2 bg-gray-900 text-white text-xs font-medium rounded hover:bg-gray-700">
-                                    Live Demo
-                                 </a>
                             </div>
-                        </div>
+
+                        </motion.div>
                     ))}
                 </div>
             </div>
