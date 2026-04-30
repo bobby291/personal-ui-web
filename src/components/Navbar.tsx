@@ -11,6 +11,17 @@ const links = [
 ];
 
 export default function Navbar() {
+
+  // 👉 Replace with your real number (no spaces, no +)
+  const whatsappNumber = "2348163586476";
+
+  // Optional pre-filled message
+  const message = encodeURIComponent(
+    "Hello Bobby, I’d like to book a call to discuss a project."
+  );
+
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
+
   return (
     <motion.header
       initial={{ y: -30, opacity: 0 }}
@@ -19,10 +30,12 @@ export default function Navbar() {
       className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-8"
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-purple-700 px-4 py-3 backdrop-blur-xl md:px-6">
+
+        {/* Logo */}
         <a href="#" className="flex items-center gap-3">
           <Image
             src="/logo.png"
-            alt="GeekVentures logo"
+            alt="Bobby logo"
             width={36}
             height={36}
             className="rounded-md"
@@ -35,6 +48,7 @@ export default function Navbar() {
           </div>
         </a>
 
+        {/* Nav Links */}
         <nav className="hidden items-center gap-7 md:flex">
           {links.map((link) => (
             <a
@@ -47,12 +61,16 @@ export default function Navbar() {
           ))}
         </nav>
 
+        {/* WhatsApp CTA */}
         <a
-          href="#contact"
-          className="rounded-full border border-white/10 bg-white px-4 py-2 text-sm font-semibold text-black transition hover:scale-[1.03]"
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full border border-white/10 bg-white px-4 py-2 text-sm font-semibold text-black transition hover:scale-[1.05] hover:bg-gray-100"
         >
           Book a Call
         </a>
+
       </div>
     </motion.header>
   );
